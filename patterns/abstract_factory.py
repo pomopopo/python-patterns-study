@@ -1,6 +1,6 @@
-#!/usr/local/bin/python3.7
+#!/usr/local/bin/python3
 """
-抽象工厂模式的用处?
+*抽象工厂模式的用处?
 
     在一些语言里(例如 Java), 抽象工厂模式提供了无需修改原 class 就能
 创建新对象(相关/依赖)的接口.
@@ -14,23 +14,33 @@
 (builtin) 接口, 在正常情况下, 我们可以简单地降类作为可调用对象----类
 在python中是第一类对象.
 
-本例做了什么?
+*本例做了什么?
     抽象的宠物店里有抽象的宠物, 它们都可以叫(.speak()). 具体到猫猫店
 或者狗狗店, 从抽象宠物店生成即可.
 
-    PetShop                                    Pet
-  <<abstract>>                             <<abstract>>
-  +pet_factory                               +speak()
-  +buy_pet()                                 +__str__
-    /     \                                 /       \
-   /        \                            Dog         Cat
-cat_shop   pet_shop                    +speak()     +speak()
-                                       +__str__     +__str__
-    ^          ^                          |          |   |
-    |          +--------------------------+----------+   |
-    +----------------------------------------------------+
+                                   +--------------+
+                                   |     Pet      |
+ +---------------+                 | <<abstract>> |
+ |    PetShop    |                 | +speak()     |
+ | <<abstract>>  |                 | +__str__     |
+ | +pet_factory  |                 +-+---------+--+
+ | +buy_pet()    |                   |         |
+ +-------------+-+           +-------+--+    +-+--------+
+   |           |             |   Dog    |    |    Cat   |
+   |           |             | +speak() |    | +speak() |
+   |           |             | +__str__ |    | +__str__ |
+   |           |             +------+---+    +--+----+--+
+   |           |                    |           |    |
+   |  +-----------------------------+-----------+    |
+   |  |        |    +--------------------------------+
+   |  |        |    |
++--+--+--+   +-+----+-+
+|pet_shop|   |cat_shop|
++--------+   +--------+
+ buy_pet()    buy_pet()
 
-抽象工厂模式应用场景?
+
+*抽象工厂模式应用场景?
 [这些好难懂...]
 - 一个系统不应当依赖于产品类实例如何被创建、组合和表达的细节，这对于所有形态
   的工厂模式都是重要的。
@@ -42,19 +52,19 @@ cat_shop   pet_shop                    +speak()     +speak()
 - QQ换皮肤, 一次一整套
 - 同一品牌下的不同产品
 
-优缺点?
+*优缺点?
 - 优点：当一个产品族中的多个对象被设计成一起工作时，它能保证客户端始终只使用同
   一个产品族中的对象。
 - 缺点：产品族扩展非常困难，要增加一个系列的某一产品，既要在抽象的 Creator 里
   加代码，又要在具体的里面加代码。
 
-参考:
-https://www.github.com/faif/design-patterns
-https://www.runoob.com/design-pattern/abstract-factory-pattern.html
-https://blog.csdn.net/qq_33961117/article/details/90604014
-http://c.biancheng.net/view/1351.html
+*参考:
+- https://www.github.com/faif/design-patterns
+- https://www.runoob.com/design-pattern/abstract-factory-pattern.html
+- https://blog.csdn.net/qq_33961117/article/details/90604014
+- http://c.biancheng.net/view/1351.html
 
-概述:
+*概述:
     提供一组独立工厂的封装方式.
 """
 
