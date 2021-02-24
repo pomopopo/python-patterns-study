@@ -11,6 +11,7 @@
 |:---:|------|
 | [factory 工厂](patterns/factory.py) | **委托**某特定的函数/方法去创建新实例 |
 | [abstract factory 抽象工厂](patterns/abstract_factory.py) | 对特定工厂使用通用函数(泛型) |
+| [singleton 单例模式](patterns/singleton.py) | 只会有一个类实例(似乎拆成多个比较好) |
 | [borg 单例共享](patterns/borg.py) | 在实例间共享单例的 **状态** |
 | builder 建造者 | 建造者通过接收不同参数, 返回不同的对象. 构造函数就一个, 无需多个. |
 | lazy evaluation 懒评价 | 延迟表达式的评估 |
