@@ -26,13 +26,13 @@
 背景知识: python 中, import 进来的模块, 是全局变量. 而且 id() 不变.
 
 ```
->>> import abc as a   # 用系统模块演示, 不再创建新的了
->>> import abc as b
->>> id(a) == id(b)    # 导入的模块 id 相同
-True
->>> a.my_prop = 1     # 添加属性(简化,没用 hasattr 检查)
->>> b.my_prop         # a 的属性 b自然是有的, 前面只是 as 么
-1
+import abc as a   # 用系统模块演示, 不再创建新的了
+import abc as b
+id(a) == id(b)    # 导入的模块 id 相同
+
+a.my_prop = 1     # 添加属性(简化,没用 hasattr 检查)
+b.my_prop         # a 的属性 b自然是有的, 前面只是 as 么
+
 ```
 """
 
@@ -77,7 +77,6 @@ class Singleton_3_new(object):
     _instance = None
 
     def __new__(cls, *args, **kwargs) :
-        print('__new__')
         if cls._instance is None:
             cls._instance = super().__new__(cls)
         return cls._instance
@@ -89,22 +88,21 @@ class Singleton_3_new(object):
         print(self._a, self._kw)
 
 # meatclass方式
-# class Singleton_4_meta(type):
-#     """核心是 type"""
-#     _instances = []
+class Singleton_4_meta(type):
+    """核心是 type"""
+    _instances = []
 
-#     def __call__(cls, *args, **kwds):
-#         if cls not in cls._instances:
-#             cls._instances[cls] = super(Singleton_4_meta, cls).__call__(*args, **kwds)
-#         return cls._instances[cls]
-
-
-# class Worker_4(Singleton_4_meta):
-#     def __init__(self, *args, **kw):
-#         print(args, kw)
+    def __call__(cls, *args, **kwds):
+        if cls not in cls._instances:
+            cls._instances[cls] = super(Singleton_4_meta, cls).__call__(*args, **kwds)
+        return cls._instances[cls]
 
 
-if __name__ == "__main__":
+class Worker_4(Singleton_4_meta):
+    def __init__(self, *args, **kw):
+        print(args, kw)
+
+def main():
     """
     # 1. 用 import 实现单例
     >>> import abc as a   # 用系统模块演示, 不再创建新的了
@@ -136,35 +134,18 @@ if __name__ == "__main__":
     () {}
     >>> id(e) == id(f)
     True
+
+    # 5. meta
+    # >>> a = Worker_4('5',name='ha')
+    # >>> b = Worker_4()
+    # print('func', id(a) == id(b))
     """
 
+
+if __name__ == "__main__":
     import doctest
+
     doctest.testmod(verbose=False)
-
-    # 1. import
-    import abc as a   # 用系统模块演示, 不再创建新的了
-    import abc as b
-    a.my_prop = 1     # 添加属性(简化,没用 hasattr 检查)
-    print(b.my_prop)  # a 的属性 b自然是有的, 前面只是 as 么
-    print('import', id(a) == id(b))   # 导入的模块 id 相同
-
-    # 2. 函数装饰器(闭包)
-    print('-'*20)
-    a = Worker_1('2')
-    b = Worker_1()
-    print('func', id(a) == id(b))
-
-    # 3. 类装饰器单例 __init__
-    print('-'*20)
-    c = Worker_2('3')
-    d = Worker_2()
-    print('class', id(a) == id(b))
-
-    # 4. __new__
-    print('-'*20)
-    e = Singleton_3_new('4', name='hey you')
-    f = Singleton_3_new()
-    print('__new__', id(e) == id(f))
 
     # 5. meta
     # print('-'*20)
