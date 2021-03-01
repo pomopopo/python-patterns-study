@@ -59,27 +59,36 @@ def main():
 
     >>> sample_queue = queue.Queue()
 
+    # 例一, 用 with 包裹的对象池, with 之后对象扔在队列里
     >>> sample_queue.put('yam')
     >>> with ObjectPool(sample_queue) as obj:
     ...     print(f'Inside with: {obj}')
     Inside with: yam
 
+    # 队列 get 之后可就没了啊
     >>> print(f'Outside with: {sample_queue.get()}')
     Outside with: yam
 
+    # 例二, 在函数里直接使用 ObjectPool 对象池
     >>> sample_queue.put('sam')
     >>> test_object(sample_queue)
     Inside func: sam
 
+    # 队列里 get 出来 (get后就空了)
     >>> print(f'Outside func: {sample_queue.get()}')
     Outside func: sam
 
+    # 池子里加入多个对象, 注意这时候的顺序! hmm, 这里有点怪, 暂不理解.
     >>> sample_queue.put('yaya')
-    >>> sample_queue.put('yoyo')
+    >>> sample_queue.put('mimo')
     >>> while not sample_queue.empty():
+    ...     test_object(sample_queue)
     ...     print(sample_queue.get())
+    Inside func: yaya
+    mimo
+    Inside func: yaya
     yaya
-    yoyo
+
 
     """
 
