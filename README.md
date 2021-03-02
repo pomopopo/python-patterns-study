@@ -15,8 +15,8 @@
 | [borg 单例共享](patterns/borg.py) | 在实例间共享单例的 **状态** |
 | [builder 创建者](patterns/builder.py) | 创建者通过接收不同参数, 返回不同的对象. 构造函数就一个, 无需多个. |
 | [lazy evaluation 惰性求值](patterns/lazy_evaluation.py) | 把类属性的计算求值推迟到调用时候(而不是类建立时候) |
-| [pool 对象池](patterns/pool.py) | 预先创建并维护 **一组同类型的** 实例 |
-| prototype 原型 | 因为生成实例的代价很大, 所以新实例就应该用原型的工厂和克隆来创建 |
+| [pool 对象池](patterns/pool.py) | 预先创建并维护 **一组同类型的** 实例 (还有点不理解)|
+| [prototype 原型](patterns/prototype.py) | 如果生成新实例的代价很大, 那么可以用工厂, 并且克隆原型来创建新实例 |
 
 
 ### 结构型模式 Structural Patterns
