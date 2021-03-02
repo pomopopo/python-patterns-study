@@ -30,7 +30,7 @@
  +----------^--------+           |  unregister_objects() |
             |clone()             +-----------^-----------+
     +-------------------+                    |
-    |     object-b      +--register----------+
+    |     object-b      +----register--------+
     +-------------------+
     |   value='b-value' |
     |   is_checked=True |
