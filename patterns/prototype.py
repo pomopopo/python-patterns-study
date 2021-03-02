@@ -16,6 +16,26 @@
     类a(object-a),
     类b(object-b).
 
++--------------+             +---------+ register
+|  Prototype   <--prototype--+ default +-----+
++--------------+             +---------+     |
+|  + clone()   |                             |
++-----------^--+                             |
+            |prototype           +-----------v-----------+
+ +-------------------+           |      Dispatcher       |
+ |     object-a      |           +-----------------------+
+ +-------------------+           |  _objects={}          |
+ |   value='a-value' +--register->  get_objects()        |
+ |   category='a'    |           |  register_objects()   |
+ +----------^--------+           |  unregister_objects() |
+            |clone()             +-----------^-----------+
+    +-------------------+                    |
+    |     object-b      +--register----------+
+    +-------------------+
+    |   value='b-value' |
+    |   is_checked=True |
+    +-------------------+
+
 *应用场景?
 - 数据库操作, 在创建后缓存起来, 在需要请求的时候返回一个克隆, 可以减少调用.
 - 避免创建与产品平行层次的工厂类时.
