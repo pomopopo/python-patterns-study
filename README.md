@@ -39,7 +39,7 @@
 |:---:|------|
 | chain of resposibility 责任链 | 为数据处理提供一个链式可连续调用的句柄 |
 | catalog 目录 |  |
-| chaining method 链式方法 |  |
+| [chaining method 链式调用](patterns/chaining_method.py) | 调用之后,可以继续调用自己的方法(用.连接) |
 | command 命令 |  |
 | iterator 迭代器 |  |
 | iterator2 迭代器2 |  |
