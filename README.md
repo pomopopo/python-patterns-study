@@ -22,36 +22,37 @@
 ### 结构型模式 Structural Patterns
 | 模式 | 描述 |
 |:---:|------|
-| [3层](patterns/3-tier.py) | 数据--业务逻辑--呈现,三层分离(严格关系) |
-| 适配器 | 用**白名单**,把一个接口适配成另一个 |
-| 桥接 | 通过中间人减少接口变化的影响 |
-| 合成 |  |
-| 装饰器 |  |
-| 轻量 | 透明地**重用**具有相似/同**状态**的对象实例 |
-| ? |  |
+| [3-tier 3层](patterns/3-tier.py) | 数据--业务逻辑--呈现,三层分离(严格关系) |
+| adapter 适配器 | 用**白名单**,把一个接口适配成另一个 |
+| [bridge 桥接](patterns/bridge.py) | 通过中间人减少接口变化的影响 |
+| composite 合成 | 让客户端用同一个方式处理不同的对象/组合 |
+| decorator 装饰器 | 把功能包起来, 从而改变输出 |
+| facade 门面 | 把一个类用作其他一些类的API |
+| flyweight 轻量 | 透明地**重用**具有相似/同**状态**的对象实例 |
+| front controller 前端控制器? | ?? |
 | MVC | 模型--视图--控制(非严格关系) |
-| 代理 |  |
+| proxy 代理 |  |
 
 
 ### 行为型模式 Behavioral Patterns
 | 模式 | 描述 |
 |:---:|------|
-| 责任链 |  |
-| 目录 |  |
-| 链式调用 |  |
-| 命令 |  |
-| 迭代器 |  |
-| 迭代器2 |  |
-| 中介 |  |
+| chain of resposibility 责任链 | 为数据处理提供一个链式可连续调用的句柄 |
+| catalog 目录 |  |
+| chaining method 链式方法 |  |
+| command 命令 |  |
+| iterator 迭代器 |  |
+| iterator2 迭代器2 |  |
+| mediator 中介 |  |
 | memento |  |
-| 观察者 |  |
-| 发布/订阅 |  |
-| 注册 |  |
+| observer 观察者 |  |
+| publish subscribe 发布/订阅 |  |
+| registry 注册 |  |
 | specification |  |
-| 状态 |  |
-| 策略 |  |
-| 模板 |  |
-| 访问者 |  |
+| state 状态 |  |
+| stratory 策略 |  |
+| template 模板 |  |
+| visitor 访问者 |  |
 
 ### ?
 
