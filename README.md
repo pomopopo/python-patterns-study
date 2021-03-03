@@ -23,7 +23,7 @@
 | 模式 | 描述 |
 |:---:|------|
 | [3-tier 3层](patterns/3-tier.py) | 数据--业务逻辑--呈现,三层分离(严格关系) |
-| adapter 适配器 | 用**白名单**,把一个接口适配成另一个 |
+| [adapter 适配器](patterns/adapter.py) | 用**白名单**,把一个接口适配成另一个 |
 | [bridge 桥接](patterns/bridge.py) | 通过中间人减少接口变化的影响 |
 | composite 合成 | 让客户端用同一个方式处理不同的对象/组合 |
 | decorator 装饰器 | 把功能包起来, 从而改变输出 |
