@@ -11,7 +11,7 @@
 |:---:|------|
 | [factory 工厂](patterns/factory.py) | **委托**某特定的函数/方法去创建新实例 |
 | [abstract factory 抽象工厂](patterns/abstract_factory.py) | 对特定工厂使用通用函数(泛型) |
-| ★[singleton 单例模式](patterns/singleton.py) | 只会有一个类实例(似乎拆成多个比较好) |
+| ★ [singleton 单例模式](patterns/singleton.py) | 只会有一个类实例(似乎拆成多个比较好) |
 | [borg 单例共享](patterns/borg.py) | 在实例间共享单例的 **状态** |
 | [builder 创建者](patterns/builder.py) | 创建者通过接收不同参数, 返回不同的对象. 构造函数就一个, 无需多个. |
 | [lazy evaluation 惰性求值](patterns/lazy_evaluation.py) | 把类属性的计算求值推迟到调用时候(而不是类建立时候) |
@@ -25,13 +25,13 @@
 | [3-tier 3层](patterns/3-tier.py) | 数据--业务逻辑--呈现,三层分离(严格关系) |
 | [adapter 适配器](patterns/adapter.py) | 用**白名单**,把一个接口适配成另一个 |
 | [bridge 桥接](patterns/bridge.py) | 通过中间人减少接口变化的影响 |
-| ★[composite 合成](patterns/composite.py) | 让客户端用同一个方式处理不同的对象/组合(部分--整体, 用树形结构组合) |
+| ★ [composite 合成](patterns/composite.py) | 让客户端用同一个方式处理不同的对象/组合(部分--整体, 用树形结构组合) |
 | decorator 装饰器 | 把功能包起来, 从而改变输出 |
-| ★facade 门面 | 把一个类用作其他一些类的API |
+| ★ [facade 门面/外观](patterns/facade.py) | 把一个类用作其他一些类的API, 是其他类高层接口, 使其他类更容易用(把零件组装电脑) |
 | flyweight 轻量 | 透明地**重用**具有相似/同**状态**的对象实例 |
 | front controller 前端控制器? | ?? |
 | MVC | 模型--视图--控制(非严格关系) |
-| ★proxy 代理 |  |
+| ★ proxy 代理 |  |
 
 
 ### 行为型模式 Behavioral Patterns
@@ -41,7 +41,7 @@
 | catalog 目录 |  |
 | [chaining method 链式调用](patterns/chaining_method.py) | 调用之后,可以继续调用自己的方法(用.连接) |
 | command 命令 |  |
-| ★iterator 迭代器 |  |
+| ★ iterator 迭代器 |  |
 | iterator2 迭代器2 |  |
 | mediator 中介 |  |
 | memento |  |
@@ -51,7 +51,7 @@
 | specification |  |
 | state 状态 |  |
 | stratory 策略 |  |
-| ★template 模板 |  |
+| ★ template 模板 |  |
 | visitor 访问者 |  |
 
 ### ?
@@ -86,4 +86,5 @@
 
 
 ## ref
+https://github.com/faif/python_patterns
 https://blog.csdn.net/longronglin/article/details/1454315
