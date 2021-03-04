@@ -24,8 +24,8 @@
             |prototype           +-----------v-----------+
  +-------------------+           |      Dispatcher       |
  |     object-a      |           +-----------------------+
- +-------------------+           |  _objects={}          |
- |   value='a-value' +--register->  get_objects()        |
+ +-------------------+           |  _objects={}          |           Client
+ |   value='a-value' +--register->  get_objects()    o-------- n,p=prototype.clone()
  |   category='a'    |           |  register_objects()   |
  +----------^--------+           |  unregister_objects() |
             |clone()             +-----------^-----------+
