@@ -20,6 +20,8 @@ http://grok.zope.org/doc/current/reference/decorators.html
 
 
 class TextTag:
+    """基类, 文字标签限定款"""
+
     def __init__(self, text):
         self._text = text
 
@@ -28,6 +30,8 @@ class TextTag:
 
 
 class BoldWrapper(TextTag):
+    """加 <b>"""
+
     def __init__(self, wrapped):
         self._wrapped = wrapped
 
@@ -36,6 +40,8 @@ class BoldWrapper(TextTag):
 
 
 class ItalicWrapper(TextTag):
+    """加 <i>"""
+
     def __init__(self, wrapped):
         self._wrapped = wrapped
 
@@ -45,17 +51,18 @@ class ItalicWrapper(TextTag):
 
 def main():
     """
-    >>> simple_hello = TextTag('hello, wolrd.')
+    # 标签有四种加法, 侬晓得伐?
+    >>> simple_hello = TextTag('hello, world.')
     >>> special_italic = ItalicWrapper(simple_hello)
     >>> special_bold = BoldWrapper(simple_hello)
     >>> special_hello = ItalicWrapper(BoldWrapper(simple_hello))
 
     >>> for i in (simple_hello, special_italic, special_bold, special_hello):
     ...     print(i.render())
-    hello, wolrd.
-    <i>hello, wolrd.</i>
-    <b>hello, wolrd.</b>
-    <i><b>hello, wolrd.</b></i>
+    hello, world.
+    <i>hello, world.</i>
+    <b>hello, world.</b>
+    <i><b>hello, world.</b></i>
     """
 
 
