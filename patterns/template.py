@@ -49,6 +49,13 @@ def template_function(getter, converter=False, to_save=False):
     print(f'`{data}` was processed')
 
 
+def make_template(skeleton, getter, *arg, **kw):
+    """更抽象一级的模板, 可以用来造列表"""
+    def template():
+        return skeleton(getter, *arg, **kw)
+    return template
+
+
 def main():
     """
     >>> template_function(get_text, to_save=True)
@@ -67,20 +74,51 @@ def main():
     Skip convertion
     [SAVE]
     `csv` was processed
+
+    >>> templates = [make_template(template_function,g, converter=c, to_save=s)
+    ...     for g in (get_text, get_pdf, get_csv)
+    ...     for c in (False, convert_to_text, False)
+    ...     for s in (True, False, True)]
+    """
+
+def main2():
+    # 如果疯了, 所有条件都试一遍也是可以的
+    """
+    # 用 make_template 造更灵活的函数, 存入列表
+    >>> templates = [make_template(template_function, g, converter=c, to_save=s)
+    ...     for g in (get_pdf, get_csv)
+    ...     for c in (convert_to_text, False)
+    ...     for s in (True,)
+    ... ]
+
+    >>> templates
+    [<function make_template.<locals>.template at 0x...>, ...]
+
+    >>> for t in templates:
+    ...     t()
+    Got `pdf`
+    [CONVERT]
+    [SAVE]
+    `pdf as text` was processed
+    Got `pdf`
+    Skip convertion
+    [SAVE]
+    `pdf` was processed
+    Got `csv`
+    [CONVERT]
+    [SAVE]
+    `csv as text` was processed
+    Got `csv`
+    Skip convertion
+    [SAVE]
+    `csv` was processed
+
     """
 
 
 if __name__ == "__main__":
     # main()
-    import doctest
-    doctest.testmod(verbose=True)
 
-    # 如果疯了, 所有条件都试一遍也是可以的
-    # templates = [template_function(g, c, s)
-    #             for g in (get_text, get_pdf, get_csv)
-    #             for c in (False, convert_to_text, False)
-    #             for s in (True, False, True)]
-    # for t in templates:
-    #     if t:
-    #         t()
+    import doctest
+    doctest.testmod(verbose=True , optionflags=doctest.ELLIPSIS)
 
