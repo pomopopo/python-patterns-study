@@ -28,7 +28,7 @@
 | [composite 合成](patterns/composite.py)   | 🥇 让客户端用同一个方式处理不同的对象/组合(部分--整体, 用树形结构组合)             |
 | [decorator 装饰器](patterns/decorator.py) | 🥈 把功能包起来, 从而改变输出                                                      |
 | [facade 门面/外观](patterns/facade.py)    | 🥇 把一个类用作其他一些类的API, 是其他类高层接口, 使其他类更容易用(把零件组装电脑) |
-| flyweight 轻量                            | 透明地**重用**具有相似/同**状态**的对象实例                                       |
+| [flyweight 享元](patterns/flyweight.py)   | 透明地**重用**具有相似/相同**状态**的对象实例                                       |
 | front controller 前端控制器               | ??                                                                                |
 | MVC                                       | 模型--视图--控制(非严格关系)                                                      |
 | [proxy 代理](patterns/proxy.py)           | 🥇 一个对象把另一个对象的操作控制起来,以代理控制对象访问                           |
