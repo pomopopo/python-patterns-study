@@ -40,8 +40,8 @@
 | [chain of resposibility 责任链](patterns/chain_of_responsibility.py) | 🥉 为数据处理提供一个链式可连续调用的句柄            |
 | catalog 目录                                                         |                                                     |
 | [chaining method 链式调用](patterns/chaining_method.py)              | 调用之后,可以继续调用自己的方法(用.连接)            |
-| [command 命令](patterns/command.py)                                  | 🥈 **推迟绑定** 命令和参数 到调用上                        |
-| iterator 迭代器                                                      | 🥇                                                   |
+| [command 命令](patterns/command.py)                                  | 🥈 **推迟绑定** 命令和参数 到调用上                  |
+| [iterator 迭代器](patterns/iterator.py)                              | 🥇 提供一个容器, 通过容器能逐个访问内部对象          |
 | iterator2 迭代器2                                                    |                                                     |
 | mediator 中介                                                        |                                                     |
 | memento                                                              |                                                     |
