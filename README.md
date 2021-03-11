@@ -42,7 +42,7 @@
 | [chaining method 链式调用](patterns/chaining_method.py)              | 调用之后,可以继续调用自己的方法(用.连接)            |
 | [command 命令](patterns/command.py)                                  | 🥈 **推迟绑定** 命令和参数 到调用上                  |
 | [iterator 迭代器](patterns/iterator.py)                              | 🥇 提供一个容器, 通过容器能逐个访问内部对象          |
-| iterator2 迭代器2                                                    |                                                     |
+| [iterator2 迭代器2](patterns/iterator_alt.py)                        | 迭代器的 `__iter__` 实现                            |
 | mediator 中介                                                        |                                                     |
 | memento                                                              |                                                     |
 | [observer 观察者](patterns/observer.py)                              | 🥇 当 **发生事件** 或 **数据变化**, 提供**回调**通知 |
