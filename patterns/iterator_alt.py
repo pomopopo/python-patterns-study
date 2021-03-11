@@ -10,13 +10,7 @@
 
 
 class NumberWords:
-    _WORD_MAP = (
-        'one',
-        'two',
-        'three',
-        'four',
-        'five'
-    )
+    _WORD_MAP = ('one', 'two', 'three', 'four', 'five')
 
     def __init__(self, start, stop):
         self.start = start
@@ -34,9 +28,10 @@ class NumberWords:
         self.start += 1
         return self._WORD_MAP[current - 1]
 
+
 def main():
     """
-    # 一个正常的 1-2
+    # 一个正常的 1-2 迭代
     >>> for num in NumberWords(start=1, stop=2):
     ...     print(num)
     one
@@ -50,6 +45,7 @@ def main():
     five
 
     """
+
 
 if __name__ == "__main__":
     import doctest
