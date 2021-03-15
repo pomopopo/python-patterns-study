@@ -32,6 +32,8 @@
 可以运行时选择算法.
 """
 
+# 例子1: 订单
+
 
 class Order:
     def __init__(self, price, discount_strategy=None):
@@ -39,7 +41,8 @@ class Order:
         self.discount_strategy = discount_strategy
 
     def price_after_discount(self):
-        discount = self.discount_strategy(self) if self.discount_strategy else 0
+        discount = self.discount_strategy(
+            self) if self.discount_strategy else 0
         return self.price - discount
 
     def __repr__(self):
@@ -59,7 +62,7 @@ def on_sale_discount(order):
         return discount
 
 
-def main():
+def test_example_1():
     """
     >>> print(Order(27))
     <Price: 27.00, price after discount: 27.00>
@@ -75,7 +78,50 @@ def main():
     """
 
 
+# 例子2: 更虚拟一些
+
+import types
+
+
+class Strategy2:
+    def __init__(self, func=None):
+        self.name = 'Stragery2 Example 0'
+        # print(func)
+        if func:
+            # 注意这里 types 用法!
+            self.execute = types.MethodType(func, self)
+
+    def execute(self):
+        print(self.name)
+
+
+def exec_replacement_1(self):
+    print(f'{self.name} from exec 1')
+
+
+def exec_replacement_2(self):
+    print(f'{self.name} from exec 2')
+
+
+def test_example_2():
+    """
+    >>> s0 = Strategy2()
+    >>> s0.execute()
+    Stragery2 Example 0
+
+    >>> s1 = Strategy2(exec_replacement_1)
+    >>> s1.name = 'Strategy Example 1'
+    >>> s1.execute()
+    Strategy Example 1 from exec 1
+
+    >>> s2 = Strategy2(exec_replacement_2)
+    >>> s2.name = 'Strategy_2'
+    >>> s2.execute()
+    Strategy_2 from exec 2
+
+    """
+
 if __name__ == "__main__":
-    # main()
     import doctest
     doctest.testmod(verbose=True)
+
