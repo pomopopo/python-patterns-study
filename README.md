@@ -1,10 +1,10 @@
 # python 设计模式学习
 
-这是一个 `python` `设计模式` 及其用法的汇总. 主要资料源自 faif/python-patterns.
+这是一个 `python` `设计模式` 及其用法的汇总. 大量内容翻自 faif/python-patterns.
 
 ## 现有的模式
 
-按常用程度, 标记为 🥇 🥈 🥉, 重要程度依次递减, 无标记的也不是不好, 就是常用程度略低.
+按常用程度, 标记为: 🥇 , 🥈 , 🥉 , 空白. 1级最常用/重要/有用, 然后常用程度依次递减, 无标记的大概就不怎么经常用到了.
 
 ### 创建型模式 Creational Patterns
 | 模式                                                      | 描述                                                                |
@@ -47,12 +47,12 @@
 | [memento 备忘录](patterns/memento.py)                                | 生成一个不透明的标志, 可以让对象回到之前的状态            |
 | [observer 观察者](patterns/observer.py)                              | 🥇 当 **发生事件** 或 **数据变化**, 提供**回调**通知       |
 | [publish subscribe 发布/订阅](patterns/publish_subscribe.py)         | 发布事件/数据到 **0+ 注册用户**的消息源                   |
-| [registry 注册](patterns/registry.py)                                | 保存一个给定类的所有子类跟踪信息                              |
+| [registry 注册](patterns/registry.py)                                | 保存一个给定类的所有子类跟踪信息                          |
 | specification                                                        |                                                           |
 | [state 状态](patterns/state.py)                                      | 🥈 将逻辑分散为几个不相关的基本状态, 并且可以在状态间转换. |
 | [stratory 策略](patterns/strategy.py)                                | 🥈 对相同的数据, 有多项可选的操作                          |
 | [template 模板](patterns/template.py)                                | 🥇 一个对象定义了框架, 但其功能是可插入/替换的             |
-| visitor 访问者                                                       |                                                           |
+| visitor 访问者                                                       | 激活集合内所有成员的回调函数                              |
 
 ### 可测试模式的设计
 | 模式                          | 描述              |
